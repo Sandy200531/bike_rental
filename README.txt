@@ -1,30 +1,28 @@
 # 🚲 Bike Rental Demand Prediction
 
-A machine learning project that predicts **hourly bike rental demand** using weather, time, season, and working-day information. The project includes data generation, preprocessing, exploratory data analysis, feature engineering, model training, and model comparison.
+A machine learning project that predicts **hourly bike rental demand** using time, weather, season, and working-day information.
 
 ## 📌 Features
 
 * Generates a realistic bike rental dataset
-* Handles missing values and duplicate records
+* Cleans and preprocesses the data
 * Performs Exploratory Data Analysis (EDA)
 * Creates time-based and weather-based features
-* Uses cyclical encoding for hour, month, and weekday
-* Compares multiple regression models
-* Evaluates models using **MAE, RMSE, and R²**
+* Applies cyclical encoding for time features
+* Trains and compares multiple regression models
+* Evaluates models using MAE, RMSE, and R²
 * Saves plots and model results automatically
 
 ## 🛠️ Technologies Used
 
 * Python
-* Pandas
 * NumPy
+* Pandas
 * Matplotlib
 * Seaborn
 * Scikit-learn
 
 ## 🤖 Machine Learning Models
-
-The following models are trained and compared:
 
 1. **Linear Regression**
 2. **Random Forest Regressor**
@@ -34,28 +32,26 @@ The model with the **lowest RMSE** is selected as the best-performing model.
 
 ## 📊 Features Used
 
-The prediction is based on factors such as:
-
 * Hour
 * Month
 * Weekday
 * Season
-* Weather condition
+* Weather
 * Temperature
 * Humidity
 * Windspeed
-* Working day
+* Working Day
 * Holiday
-* Rush hour
-* Comfort index
+* Rush Hour
+* Comfort Index
 
-Cyclical features are created for **hour, month, and weekday** to represent their repeating patterns.
+Cyclical encoding is applied to **hour, month, and weekday** to capture repeating time patterns.
 
 ## 📈 Evaluation Metrics
 
-* **MAE (Mean Absolute Error):** Average prediction error
-* **RMSE (Root Mean Squared Error):** Measures prediction error with greater penalty for large errors
-* **R² Score:** Measures how well the model explains the variation in rental demand
+* **MAE** – Mean Absolute Error
+* **RMSE** – Root Mean Squared Error
+* **R² Score** – Coefficient of Determination
 
 ## 📁 Project Structure
 
@@ -77,18 +73,32 @@ Bike_Rental_Prediction/
 │   ├── 08_actual_vs_predicted.png
 │   └── 09_feature_importance.png
 │
-└── bike_rental_prediction.py
+├── bike_rental_prediction.py
+└── README.md
 ```
 
 ## ▶️ How to Run
 
-### 1. Install dependencies
+### 1. Clone the Repository
+
+```bash
+git clone <your-repository-url>
+cd Bike_Rental_Prediction
+```
+
+### 2. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+Or:
 
 ```bash
 pip install numpy pandas matplotlib seaborn scikit-learn
 ```
 
-### 2. Set the project path
+### 3. Set the Project Path
 
 Update `BASE_DIR` in the Python script:
 
@@ -96,13 +106,13 @@ Update `BASE_DIR` in the Python script:
 BASE_DIR = r"C:\path\to\Bike_Rental_Prediction"
 ```
 
-### 3. Run the script
+### 4. Run the Project
 
 ```bash
 python bike_rental_prediction.py
 ```
 
-The dataset, plots, and model comparison results will automatically be saved inside the project folders.
+The dataset, plots, and model results will automatically be saved in the `data/` and `plots/` folders.
 
 ## 📊 Output
 
@@ -110,11 +120,11 @@ The project generates:
 
 * Bike rental dataset
 * EDA visualizations
-* Model performance comparison
+* Model comparison results
 * Actual vs. predicted plot
 * Feature importance plot
 * `model_results.csv`
 
 ## 🎯 Objective
 
-The main objective is to understand the factors affecting bike rental demand and build a machine learning model that can accurately predict rental counts based on historical and environmental conditions.
+The objective is to analyze bike rental patterns and build a machine learning model that predicts **hourly bike rental demand** based on historical, time, and environmental factors.
